@@ -21,6 +21,7 @@ public class Main {
             if (sumV < maxV) {
                 maxV = sumV;
             }
+            // maxV = Math.min(maxV, sumV)로 대체 가능
         }
 
         System.out.println(maxV);
