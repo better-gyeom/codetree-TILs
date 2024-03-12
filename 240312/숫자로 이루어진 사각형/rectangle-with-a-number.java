@@ -4,17 +4,20 @@ public class Main {
         // 여기에 코드를 작성해주세요.
         Scanner input = new Scanner(System.in);
         int N = input.nextInt();
-        System.out.println("1 2 3 4");
-        System.out.println("5 6 7 8");
-        System.out.println("9 1 2 3");
-        System.out.println("4 5 6 7");
+        printSquare(N);
     }
 
-    // public static void printSquare(int n) {
-    //     for (int i = 0; i < n; i++) {
-    //         for (int j = 0; j < n; j++) {
-
-    //         }
-    //     }
-    // }
+    public static void printSquare(int n) {
+        int k = 1;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (k % 10 == 0) {
+                    k++;
+                }
+                System.out.print(k % 10 + " ");
+                k++;
+            }
+            System.out.println();
+        }
+    }
 }
