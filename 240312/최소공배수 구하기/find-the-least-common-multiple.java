@@ -10,14 +10,15 @@ public class Main {
     }
 
     public static void findLCM(int n, int m) {
-        int lcm = 0;
-        for (int i = 1; i < Math.min(n, m); i++) {
+        int gcd = 0;
+        for (int i = 1; i <= Math.min(n, m); i++) {
             if (n % i == 0 && m % i == 0) {
-                lcm = i;
+                gcd = i;
             }
         }
-        n = n / lcm;
-        m = m / lcm;
-        System.out.println(n * m * lcm);
+        n = n / gcd;
+        m = m / gcd;
+        int lcm = n * m * gcd;
+        System.out.println(gcd);
     }
 }
