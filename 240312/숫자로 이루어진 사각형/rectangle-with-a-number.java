@@ -13,7 +13,8 @@ public class Main {
             for (int j = 0; j < n; j++) {
                 if (k % 10 == 0) {
                     k++;
-                }
+                } //k = 10이면 다시 k = 1로 만들어주는 코드 가능
+
                 System.out.print(k % 10 + " ");
                 k++;
             }
