@@ -5,10 +5,14 @@ public class Main {
         // 여기에 코드를 작성해주세요.
         Scanner input = new Scanner(System.in);
         int n = input.nextInt();
-        System.out.println(isMagicNum(n));
+        if (isMagicNum(n)) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
     }
 
-    public static String isMagicNum(int n) {
+    public static boolean isMagicNum(int n) {
         int sumV = 0;
         if (n % 2 == 0) {
             while (n >= 10) {
@@ -17,9 +21,9 @@ public class Main {
             }
 
             if ((sumV + n) % 5 == 0) {
-                return "Yes";
+                return true;
             }
         }
-        return "No";
+        return false;
     }
 }
