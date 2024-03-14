@@ -8,24 +8,39 @@ public class Main {
         String o = input.next();
         int c = input.nextInt();
 
-        String ans = calculator(a, o, c);
-        System.out.println(a + " " + o + " " + c + " = " + ans);
-    }
-
-    public static String calculator(int a, String o, int c) {
-        String ans = "";
+        
+        int ans = 0;
         if (o.equals("+")) {
-            ans = String.valueOf(a + c);
+            ans = sum(a, c);
+            System.out.println(a + " " + o + " " + c + " = " + ans);
         } else if (o.equals("-")) {
-            ans = String.valueOf(a - c);
+            ans = minus(a, c);
+            System.out.println(a + " " + o + " " + c + " = " + ans);
         } else if (o.equals("/")) {
-            ans = String.valueOf(a / c);
+            ans = div(a, c);
+            System.out.println(a + " " + o + " " + c + " = " + ans);
         } else if (o.equals("*")) {
-            ans = String.valueOf(a * c);
+            ans = mul(a, c);
+            System.out.println(a + " " + o + " " + c + " = " + ans);
         } else {
-            ans = "False";
+            System.out.println("False");
         }
-
-        return ans;
     }
+
+    public static int sum(int a, int c) {
+        return a + c;
+    }
+    public static int minus(int a, int c) {
+        return a - c;
+    }
+    public static int div(int a, int c) {
+        return a / c;
+    }
+    public static int mul(int a, int c) {
+        return a * c;
+    }
+
+    
+
+
 }
