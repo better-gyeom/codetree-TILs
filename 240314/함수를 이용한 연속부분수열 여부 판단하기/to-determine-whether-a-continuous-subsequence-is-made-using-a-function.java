@@ -18,7 +18,7 @@ public class Main {
             arr2[j] = scanner.nextInt();
         }
 
-        if (isSubArr(arr1, arr2)) {
+        if (n1 >= n2 && isSubArr(arr1, arr2)) {
             System.out.println("Yes");
         } else {
             System.out.println("No");
