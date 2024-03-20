@@ -17,9 +17,9 @@ public class Main {
 
     public static int move(int n, int[] arr) {
         int minV = Integer.MAX_VALUE;
-        int diff = 0;
+
         for (int i = 0; i < n; i++) {
-            diff = 0;
+            int diff = 0;
             for (int j = 0; j < n; j++) {
                 diff += (Math.abs(i - j) * arr[j]);
             }
