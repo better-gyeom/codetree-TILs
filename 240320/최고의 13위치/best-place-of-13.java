@@ -23,11 +23,12 @@ public class Main {
             int coin = 0;
             for (int j = 0; j < n - 2; j++) {
                 coin = arr[i][j] + arr[i][j+1] + arr[i][j+2];
+                if (coin > max) {
+                    max = coin;     
+                }
             }
 
-            if (coin > max) {
-                max = coin;
-            }
+
         }
         return max;
     }
