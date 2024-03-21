@@ -19,22 +19,17 @@ public class Main {
     }
 
     public static int success(int r, int c, String[][] arr) {
-        int ri = 0;
-        int cj = 0;
-        for (int i = 1; i < r - 1; i++) {
-            for (int j = 1; j < c - 1; j++) {
-                if (!arr[i][j].equals(arr[0][0])) {
-                    ri = i;
-                    cj = j;
-                    break;
-                }
-            }
-        }
         int cnt = 0;
-        for (int i = ri + 1; i < r - 1; i++) {
-            for (int j = cj + 1; j < c - 1; j++) {
-                if (!arr[i][j].equals(arr[ri][cj])) {
-                    cnt++;
+        for (int i = 1; i < r; i++) {
+            for (int j = 1; j < c; j++) {
+                for (int k = i + 1; k < r - 1; k++) {
+                    for (int l = j + 1; l < c - 1; l++) {
+                        if (!arr[0][0].equals(arr[i][j]) &&
+                            !arr[i][j].equals(arr[k][l]) &&
+                            !arr[k][l].equals(arr[r - 1][c - 1])) {
+                                cnt++;
+                            }
+                    }
                 }
             }
         }
