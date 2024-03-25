@@ -5,15 +5,14 @@ public class Main {
         // 여기에 코드를 작성해주세요.
         Scanner sc = new Scanner(System.in);
 
-        Product product1 = new Product();
-        product1.name = "codetree";
-        product1.code = 50;
+        Product product1 = new Product("codetree", 50);
 
         System.out.println("product " + product1.code + " is " + product1.name);
 
-        Product product2 = new Product();
-        product2.name = sc.next();
-        product2.code = sc.nextInt();
+        String name = sc.next();
+        int code = sc.nextInt();
+        Product product2 = new Product(name, code);
+
 
         System.out.println("product " + product2.code + " is " + product2.name);
 
@@ -23,11 +22,6 @@ public class Main {
 class Product {
     String name;
     int code;
-
-    public Product() {
-        this.name = "";
-        this.code = 0;
-    }
 
     public Product(String name, int code) {
         this.name = name;
