@@ -14,6 +14,9 @@ public class Main {
             String weather = sc.next();
 
             infoes[i] = new Info(date, day, weather);
+            
+            //전역객체를 만들어서 infoes의 rain인 것들 중 날짜를 compareTo해서 최근일 경우
+            //전역객체의 값을 업데이트 시키는 방법도 사용할 수 있음
         }
 
         Info[] rains = new Info[101];
