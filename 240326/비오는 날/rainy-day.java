@@ -16,15 +16,23 @@ public class Main {
             infoes[i] = new Info(date, day, weather);
         }
 
+        Info[] rains = new Info[101];
         int idx = 0;
         for (int i = 0; i < n; i++) {
             if (infoes[i].weather.equals("Rain")) {
-                System.out.println(infoes[i].date + " " + infoes[i].day + " "
-                + infoes[i].weather);
-                break;
+                rains[idx] = new Info(infoes[i].date ,infoes[i].day, infoes[i].weather);
+                idx++;
             }
         }
 
+        int x = 0;
+        for (int i = 1; i < idx; i++) {
+            if (rains[i].date.compareTo(rains[x].date) < 0) {
+                x = i;
+            }
+        }
+
+        System.out.println(rains[x].date + " " + rains[x].day + " " + rains[x].weather);
     }
 }
 
