@@ -10,6 +10,8 @@ public class Main {
         int c = sc.nextInt();
 
         System.out.println(how(a, b, c));
+        
+        //차이를 계산해버리고 그게 음수면 -1 출력하는 방법이 있다..........
     }
 
     public static int how(int a, int b, int c) {
