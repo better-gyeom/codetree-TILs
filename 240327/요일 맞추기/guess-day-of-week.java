@@ -16,6 +16,10 @@ public class Main {
 
         int diff = endDay - startDay + 1;
 
+        while (diff < 0) {
+            diff += 7;
+        }
+
         System.out.println(weeks[diff % 7]);
 
     }
