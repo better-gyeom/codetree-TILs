@@ -24,16 +24,13 @@ public class Main {
         if (diff < 7) {
             int end = Arrays.asList(weeks).indexOf(weeks[diff % 7]);
             int target = Arrays.asList(weeks).indexOf(week);
-            // System.out.println("target: " + target + ", end: " + end);
-            if (target > end) {
-                ans = 0;
-            } else {
-                ans = 1;
+            if (target <= end) {
+                ans++;
             }
         }
         while (diff >= 7) {
             diff -= 7;
-            ans ++;
+            ans++;
         }
 
         System.out.println(ans);
