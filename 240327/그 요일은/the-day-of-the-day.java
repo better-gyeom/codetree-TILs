@@ -9,7 +9,8 @@ public class Main {
         int d1 = sc.nextInt();
         int m2 = sc.nextInt();
         int d2 = sc.nextInt();
-        String week = sc.nextLine();
+        String week = sc.next();
+        // System.out.println(week);
 
         String[] weeks = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
 
@@ -17,9 +18,20 @@ public class Main {
         int endDay = totalDays(m2, d2);
 
         int diff = endDay - startDay + 1;
+        // System.out.println(diff);
 
         int ans = 0;
-        while (diff >= 0) {
+        if (diff < 7) {
+            int end = Arrays.asList(weeks).indexOf(weeks[diff % 7]);
+            int target = Arrays.asList(weeks).indexOf(week);
+            // System.out.println("target: " + target + ", end: " + end);
+            if (target > end) {
+                ans = 0;
+            } else {
+                ans = 1;
+            }
+        }
+        while (diff >= 7) {
             diff -= 7;
             ans ++;
         }
