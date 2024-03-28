@@ -16,15 +16,15 @@ public class Main {
             String order = sc.next();
 
             if (order.equals("R")) {
+                x1[i] = cur;
+                x2[i] = cur += x;
+
+                cur += x;
+            } else if (order.equals("L")) {
                 x1[i] = cur - x;
                 x2[i] = cur;
 
                 cur -= x;
-            } else if (order.equals("L")) {
-                x1[i] = cur;
-                x2[i] = cur + x;
-
-                cur += x;
             }
 
             x1[i] += 1000;
