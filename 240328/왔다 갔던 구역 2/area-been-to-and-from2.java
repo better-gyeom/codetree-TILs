@@ -7,25 +7,33 @@ public class Main {
         int n = sc.nextInt();
 
         int[] arr = new int[2001];
+        int[] x1 = new int[2001];
+        int[] x2 = new int[2001];
 
-        int now = 1000;
+        int cur = 0;
         for (int i = 0; i < n; i++) {
             int x = sc.nextInt();
             String order = sc.next();
 
             if (order.equals("R")) {
-                for (int j = now; j < now + x; j++) {
-                    arr[j] += 1;
-                }
-                now = now + x;
-                // System.out.println(now);
-            } else if (order.equals("L")) {
-                for (int j = now; j > now - x; j--) {
-                    arr[j] += 1;
-                }
-                now = now - x;
-                // System.out.println(now);
+                x1[i] = cur - x;
+                x2[i] = cur;
 
+                cur -= x;
+            } else if (order.equals("L")) {
+                x1[i] = cur;
+                x2[i] = cur + x;
+
+                cur += x;
+            }
+
+            x1[i] += 1000;
+            x2[i] += 1000;
+        }
+
+        for (int i = 0; i < n; i++) {
+            for (int j = x1[i]; j < x2[i]; j++) {
+                arr[j]++;
             }
         }
 
