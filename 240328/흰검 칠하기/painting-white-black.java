@@ -7,9 +7,9 @@ public class Main {
 
         int n = sc.nextInt();
 
-        int[] black = new int[2001];
-        int[] white = new int[2001];
-        int[] colors = new int[2001];
+        int[] black = new int[2002];
+        int[] white = new int[2002];
+        int[] colors = new int[2002];
 
         int cur = 1000;
         for (int i = 0; i < n; i++) {
