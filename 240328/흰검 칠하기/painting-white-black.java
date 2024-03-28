@@ -7,64 +7,41 @@ public class Main {
 
         int n = sc.nextInt();
 
-        int[] visited = new int[2001];
-        int[] x1 = new int[n];
-        int[] x2 = new int[n];
-        String[] dirs = new String[n];
-        String[] colors = new String[2001];
+        int[] black = new int[2001];
+        int[] white = new int[2001];
+        int[] colors = new int[2001];
 
-        int cur = 0;
+        int cur = 1000;
         for (int i = 0; i < n; i++) {
             int x = sc.nextInt();
             String dir = sc.next();
 
             if (dir.equals("R")) {
-                x1[i] = cur;
-                x2[i] = cur + x;
-                dirs[i] = "R";
-
-                cur += x;
-            } else {
-                x1[i] = cur - x;
-                x2[i] = cur;
-                dirs[i] = "L";
-
-                cur -= x;
-            }
-
-            x1[i] += 1000;
-            x2[i] += 1000;
-
-            
-        }
-
-        for (int i = 0; i < n; i++) {
-            for (int j = x1[i]; j < x2[i]; j++) {
-                visited[j]++;
-                if (dirs[i].equals("R") && visited[j] <= 3) {
-                    colors[j] = "B";
-                } else if (dirs[i].equals("L") && visited[j] <= 3) {
-                    colors[j] = "W";
-                } else if (visited[j] >= 4) {
-                    colors[j] = "G";
+                for (int j = cur; j < cur + x; j++) {
+                    black[j]++;
+                    colors[j] = 2;
                 }
+                cur += x - 1;
+            } else {
+                for (int j = cur - x + 1; j < cur + 1; j++) {
+                    white[j]++;
+                    colors[j] = 1;
+                }
+                cur -= x - 1;
             }
+            
         }
 
         int w = 0;
         int b = 0;
         int g = 0;
         for (int i = 0; i < colors.length; i++) {
-            if (colors[i] == null) {
-                continue;
-            }
-
-            if (colors[i].equals("B")) {
-                b++;
-            } else if (colors[i].equals("W")) {
-                w++;
-            } else if (colors[i].equals("G")) {
+            if (white[i] >= 2 && black[i] >= 2) {
                 g++;
+            } else if (colors[i] == 1) {
+                w++;
+            } else if (colors[i] == 2) {
+                b++;
             }
         }
 
