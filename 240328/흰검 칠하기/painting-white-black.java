@@ -7,11 +7,11 @@ public class Main {
 
         int n = sc.nextInt();
 
-        int[] black = new int[10000];
-        int[] white = new int[10000];
-        int[] colors = new int[10000];
+        int[] black = new int[200001];
+        int[] white = new int[200001];
+        int[] colors = new int[200001];
 
-        int cur = 1000;
+        int cur = 10000;
         for (int i = 0; i < n; i++) {
             int x = sc.nextInt();
             String dir = sc.next();
@@ -21,13 +21,13 @@ public class Main {
                     black[j]++;
                     colors[j] = 2;
                 }
-                cur += x - 1;
+                cur = cur + x - 1;
             } else {
                 for (int j = cur - x + 1; j < cur + 1; j++) {
                     white[j]++;
                     colors[j] = 1;
                 }
-                cur -= x - 1;
+                cur = cur - x + 1;
             }
             
         }
