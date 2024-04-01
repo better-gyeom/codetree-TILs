@@ -6,9 +6,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        int[] colored = new int[200001];
+        int[] colored = new int[2000001];
 
-        int now = 1000;
+        int now = 10000;
         for (int i = 0; i < n; i++) {
             int dis = sc.nextInt();
             String dir = sc.next();
