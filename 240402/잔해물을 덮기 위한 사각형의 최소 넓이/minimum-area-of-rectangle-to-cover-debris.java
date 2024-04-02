@@ -11,8 +11,8 @@ public class Main {
         int fx2 = sc.nextInt() + 1000;
         int fy2 = sc.nextInt() + 1000;
 
-        for (int x = fx1; x <= fx2; x++) {
-            for (int y = fy1; y <= fy2; y++) {
+        for (int x = fx1; x < fx2; x++) {
+            for (int y = fy1; y < fy2; y++) {
                 arr[x][y] = 1;
             }
         }
@@ -22,8 +22,8 @@ public class Main {
         int sx2 = sc.nextInt() + 1000;
         int sy2 = sc.nextInt() + 1000;
 
-        for (int x = sx1; x <= sx2; x++) {
-            for (int y = sy1; y <= sy2; y++) {
+        for (int x = sx1; x < sx2; x++) {
+            for (int y = sy1; y < sy2; y++) {
                 arr[x][y] = 2;
             }
         }
