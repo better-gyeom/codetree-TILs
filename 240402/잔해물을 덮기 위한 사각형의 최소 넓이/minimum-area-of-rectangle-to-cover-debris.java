@@ -32,9 +32,12 @@ public class Main {
         int minY = 2002;
         int maxX = 0;
         int maxY = 0;
+
+        boolean area = false;
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
                 if (arr[i][j] == 1) {
+                    area = true;
                     minX = Math.min(minX, i);
                     maxX = Math.max(maxX, i);
                     minY = Math.min(minY, j);
@@ -44,6 +47,10 @@ public class Main {
         }
         // System.out.println(minX + " " + minY);
         // System.out.println(maxX + " " + maxY);
-        System.out.println((maxX - minX + 1) * (maxY - minY + 1));
+        if (!area) {
+            System.out.println(0);
+        } else {
+            System.out.println((maxX - minX + 1) * (maxY - minY + 1));
+        }
     }
 }
