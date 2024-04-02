@@ -12,7 +12,7 @@ public class Main {
         }
 
         int cnt = 1;
-        int maxV = 0;
+        int maxV = 1;
         for (int i = 1; i < N; i++) {
             if (arr[i] * arr[i - 1] > 0) {
                 cnt++;
