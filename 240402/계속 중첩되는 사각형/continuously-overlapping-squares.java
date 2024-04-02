@@ -13,7 +13,7 @@ public class Main {
             int x2 = sc.nextInt() + 100;
             int y2 = sc.nextInt() + 100;
 
-            if (i % 2 == 0) {
+            if (i % 2 == 0) { //이 코드 대신에 삼항연산자를 이용하여 arr[x][y] = i % 2 ? 1 : 2 가능
                 //red
                 for (int x = x1; x < x2; x++) {
                     for (int y = y1; y < y2; y++) {
