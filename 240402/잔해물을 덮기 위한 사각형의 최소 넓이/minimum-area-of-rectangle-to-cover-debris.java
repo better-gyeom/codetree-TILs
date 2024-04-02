@@ -46,6 +46,6 @@ public class Main {
                 }
             }
         }
-        System.out.println((maxX - minX) * (maxY - minY));
+        System.out.println((maxX - minX + 1) * (maxY - minY + 1));
     }
 }
