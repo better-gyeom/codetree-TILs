@@ -35,17 +35,15 @@ public class Main {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
                 if (arr[i][j] == 1) {
-                    if (i > maxX) {
-                        maxX = i;
-                        maxY = j;
-                    }
-                    if (i < minX) {
-                        minX = i;
-                        minY = j;
-                    }
+                    minX = Math.min(minX, i);
+                    maxX = Math.max(maxX, i);
+                    minY = Math.min(minY, j);
+                    maxY = Math.max(maxY, j);
                 }
             }
         }
+        // System.out.println(minX + " " + minY);
+        // System.out.println(maxX + " " + maxY);
         System.out.println((maxX - minX + 1) * (maxY - minY + 1));
     }
 }
